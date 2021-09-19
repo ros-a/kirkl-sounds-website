@@ -1,0 +1,636 @@
+:root {
+		--color-yellow: #FCBC08;
+		--color-pink: #E03D5C;
+		--color-blue: #517BBD;
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+html, main, body {
+	font-size: 62.5%;
+	font-weight: 600;
+	color: #000;
+	width: 100%;
+}
+
+p, a {
+	font-size: 1.5rem;
+	line-height: 3.2rem;
+	font-family: museo-sans, sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: acumin-pro, sans-serif;
+	font-style: normal;
+	font-weight: 800;
+}
+
+.pink-emphasis {
+	color: var(--color-pink);
+}
+
+.blue-emphasis {
+	color: var(--color-blue);
+}
+
+.page {
+	padding: 0 5vw;
+}
+
+/* SIDEBAR */
+
+.menu {
+	top: 0;
+	position: fixed;
+	width: 50vw;
+	height: 100vh;
+	left: -50vw;
+	background: var(--color-yellow);
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.menu.active {
+	left: 0px;
+}
+
+ul {
+	padding-left: 2.2rem;
+	padding-top: 18vh;
+}
+
+ul li {
+	list-style: none;
+}
+
+.menu-items {
+	line-height: 10rem;
+	position: relative;
+	color: #FFF;
+	font-size: 3rem;
+	letter-spacing: 0.1rem;
+	display: block;
+	font-family: acumin-pro, sans-serif;
+	font-weight: 700;
+}
+.menu-hidden-items {
+	position: absolute;
+	visibility: hidden;
+	font-family: museo-sans, sans-serif;
+}
+
+.menu-hidden-items > p {
+	line-height: 2rem;
+}
+
+/* HAMBURGER ICON */
+
+#hamburger-container, #hamburger, #hamburger:before, #hamburger:before {
+	cursor: pointer;
+}
+
+#hamburger-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 3rem 2rem;
+	z-index: 10;
+}
+
+#hamburger {
+	width: 2.6rem;
+	height: 0.35rem;
+	background: #000;
+	transition: 0.5s;
+	z-index: 10;
+	border-radius: 0.5rem;
+}
+
+#hamburger:before,
+#hamburger:after {
+	content: "";
+	position: absolute;
+	width: 2.6rem;
+	height: 0.35rem;
+	background: #000;
+	border-radius: 0.5rem;
+}
+
+#hamburger:before {
+	top: -0.85rem;
+}
+
+#hamburger:after {
+	top: 0.85rem;
+}
+
+/* HAMBURGER CHANGES TO CROSS */
+
+#hamburger-container.active #hamburger {
+	transform: rotate(135deg);
+}
+
+#hamburger-container.active #hamburger:before {
+	transform: rotate(90deg);
+	top: 0;
+}
+
+#hamburger-container.active #hamburger:after {
+	transform: rotate(90deg);
+	top: 0;
+}
+
+/* COLOR OF REST OF PAGE WHEN SIDEBAR OPEN */
+
+#fade-background {
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: #000;
+	display: none;
+}
+
+#fade-background.active {
+	display: block;
+	opacity: 0.6;
+	z-index: 9;
+}
+
+/* LOGO */
+
+#logo {
+	position: fixed;
+	right: 0;
+	top: 0;
+	margin: 0.9rem 1.1rem;
+	width: 5rem;
+	height: 5rem;
+	background-size: contain;
+	background-position: center;
+	z-index: 10;
+}
+
+/* ---------------------- HOMEPAGE PART 1 START SCREEN --------------------*/
+
+.homepage-part1 {
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+}
+
+h1 {
+	font-size: 4.85rem;
+	padding: 28vh 0 1.8rem 1vw;
+} 
+
+#homepage-part1-text {
+	font-size: 1.7rem;
+	line-height: 3.2rem;
+}
+
+/* ARROW WATCH SHOWREEL */
+
+#arrow-container, #arrow-container:hover {
+	position: absolute;
+	left: 0;
+	bottom: 6vh;
+	width: 100%;
+	z-index: 8;
+	cursor: pointer;
+}
+
+#arrow {
+	margin: 0 auto;
+	width: 0.35rem;
+	height: 3.5rem;
+	background-color: #E04C69;
+	border-radius: 0.5rem;
+}
+
+#arrow:before, #arrow:after {
+	content: "";
+	width: 0.35rem;
+	height: 1.8rem;
+	background-color: #E04C69;
+	border-radius: 0.5rem;
+	position: absolute;
+	transform: translate(-0.7rem, 2rem) rotate(135deg);
+}
+
+#arrow:after {
+	transform: translate(0.4rem, 2rem) rotate(45deg);
+}
+
+/* ---------------------- HOMEPAGE PART 2 SHOWREEL-------------------- */
+
+.homepage-part2 {
+	background-color: var(--color-yellow);
+	width: 100%;
+}
+
+video {
+	position: relative;
+	max-width: 100%;
+	margin: 1.65rem 0 0 0;
+}
+
+/* TEXT BELOW VIDEO */
+
+h2 {
+	text-transform: uppercase;
+	font-size: 3.2rem;
+	letter-spacing: 0.1rem;
+	color: var(--color-blue);
+	margin: 2rem 0 1rem 0;	
+}
+
+#homepage-part2-text-container {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.text-right, .text-left {
+	width: 100%;
+	color: #FFF;
+}
+
+#video-credits {
+	position: relative;
+	cursor: pointer;
+	z-index: 7;
+	margin-bottom: 1.5rem;
+	transform-origin: 0.8rem 1.5rem;
+	transition-duration: 0.5s;
+}
+
+#video-credits.active {
+	transform: rotate(90deg);
+	color: var(--color-blue);
+}
+
+#drop-down-icon {
+	position: absolute;
+	top: 1.65rem;
+	margin-left: 0.45rem;
+	width: 0.8rem;
+	height: 0.2rem;
+	background: #FFF;
+	transform: rotate(45deg);
+	border-radius: 0.5rem;
+}
+
+#drop-down-icon::after {
+	content: "";
+	position: absolute;
+	background: #FFF;
+	width: 0.8rem;
+	height: 0.2rem;
+	border-radius: 0.5rem;
+	left: 0.35rem;
+	top: -0.35rem;
+	transform: rotate(90deg);
+}
+
+#drop-down-icon.active {
+	display: none;
+}
+
+#hidden-credits {
+	margin-top: -4.7rem;
+	padding: 0 1rem 0 2.8rem;
+	font-size: 1.3rem;
+	line-height: 2.4rem;
+	padding-bottom: 2rem;
+	display: none;
+}
+
+button {
+	color: #FFF;
+	font-size: 1.4rem;
+	font-weight: 600;
+	letter-spacing: 0.08rem;
+	z-index: 3;
+	background-color: var(--color-blue);
+	padding: 0.6rem 1.1rem;
+	position: relative;
+	margin: 2rem 0 2rem 0;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-family: acumin-pro, sans-serif;
+	font-weight: 700;
+}
+
+/* ---------------------- HOMEPAGE PART 3 ABOUT -------------------- */
+
+.homepage-part3 {
+	background-color: #FFF;
+	width: 100%;
+}
+
+#homepage-about-title {
+	color: var(--color-pink);
+}
+
+.text-left-about, .text-right-about {
+	color: #000;
+}
+
+.text-right-about {
+	font-size: 1rem;
+}
+
+#homepage-about-text-intro {
+	margin-bottom: 1rem;
+}
+
+.homepage-about-text  {
+	font-weight: 400;
+	margin-top: 2rem;
+}
+
+#music, #sound-design {
+	color: var(--color-pink);
+	font-size: 1.5rem;
+	font-weight: 800;
+	margin-top: 1rem;
+	font-family: acumin-pro, sans-serif;
+}
+
+#more-about {
+	margin: 2rem 0 2.5rem 0;
+}
+
+/* ---------------------- HOMEPAGE PART 4 CONTACT -------------------- */
+
+
+.homepage-part4-contact {
+	background-color: var(--color-yellow);
+	width: 100%;
+	text-align: center;
+}
+
+#homepage-email-address {
+	display: inline-block;
+	color: var(--color-blue);
+	font-weight: 600;
+	padding: 2rem 0;
+	letter-spacing: 0.05rem;
+	text-decoration: underline;
+	font-family: acumin-pro, sans-serif;
+	font-weight: 700;
+}
+
+/* ---------------------- CONTACT PAGE -------------------- */
+
+.contact-page {
+	text-align: center;
+}
+
+#contact-page-title {
+	padding-top: 25vh;
+	color: var(--color-pink);
+	text-transform: none;
+	font-size: 2.55rem;
+}
+
+#contact-text {
+	font-weight: 500;
+	margin-top: 1.3rem;
+	margin-bottom: 1rem;
+	font-size: 1.5rem;
+	line-height: 3rem;
+}
+
+#contact-page-email-address {
+	font-weight: 700;
+	font-size: 1.5rem;
+	letter-spacing: 0.05rem;
+	text-decoration: underline;
+	font-family: acumin-pro, sans-serif;
+	color: #000;
+}
+
+#break2 {
+	display: none;
+}
+
+/* ---------------------- ABOUT PAGE -------------------- */
+
+#container-about-page {
+	padding: 5rem 0 2rem 0;
+}
+
+#about-page-title {
+	margin: 5rem 0 1.5rem 0;
+	font-size: 3rem;
+	text-transform: none;
+	color: var(--color-pink);
+}
+
+h3 {
+	margin: 2rem 0 1rem 0;
+	font-size: 1.95rem;
+	text-transform: none;
+	color: var(--color-pink);
+}
+
+i {
+	font-family: museo-sans, sans-serif;
+	font-style: italic;
+}
+
+#about-page-text p a {
+	text-decoration: underline;
+	color: #000;
+	font-size: inherit;
+}
+
+#about-page-text p {
+	font-size: 1.4rem;
+	line-height: 2.8rem;
+	font-weight: 500;
+	margin-top: 1rem;
+}
+
+#about-page-text p:first-of-type {
+	font-weight: 700;
+}
+
+.emphasis {
+	font-weight: 700;
+	font-family: acumin-pro;
+}
+
+/* ---------------------- WORK PAGE -------------------- */
+
+.work-page {
+	height: 100vh;
+	text-align: center;
+}
+
+#soundcloud {
+	padding-top: 12vh;
+}
+
+#iframe {
+	height: 80vh;
+}
+
+/* ---------------------- MEDIA QUERIES -------------------- */
+
+@media only screen and (min-width: 500px) {
+	h1 {
+		padding: 27vh 0 1.5rem 0;
+	}
+	.menu-items {
+		font-size: 2.3rem;
+		line-height: 6rem;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	html, main, body {
+		font-size: 65%;
+	}
+	h1 {
+		padding: 30vh 0 1.5rem 0;
+	}
+	.menu {
+		width: 15rem;
+		left: -15rem;
+		top: 0;
+	}
+	.menu-items {
+		font-size: 2.2rem;
+	}
+	#iframe {
+		width: 89vw;
+	}
+}
+
+@media only screen and (min-width: 760px) {
+	html, main, body {
+		font-size: 90%;
+	}
+	h1 {
+		margin-top: 0vh;
+	}
+	.menu {
+		width: 15rem;
+		left: -15rem;
+		top: 0;
+	}
+	.menu-items {
+		line-height: 0;
+		margin-bottom: 8rem;
+		margin-top: 4rem;
+		font-size: 2rem;
+		transform-origin: 0.8rem 0;
+		transition-duration: .5s;
+		z-index: 20;
+	}
+	.menu-hidden-items {
+		position: absolute;
+		font-size: 1.4rem;
+		color: #FFF;
+		margin: -9.3rem 0 0 2.3rem;
+		line-height: 1.3em;
+		display: none;
+		visibility: visible;
+		font-weight: 600;
+	}
+	.menu-item1.active {
+		color: var(--color-blue);
+		transform: rotate(90deg);
+	}
+	.menu-item2.active {
+		color: var(--color-blue);
+		transform: rotate(90deg);
+	}
+	.menu-item3.active {
+		color: var(--color-blue);
+		transform: rotate(90deg);
+	}
+	.menu-item4.active {
+		color: var(--color-blue);
+		transform: rotate(90deg);
+	}
+	#iframe {
+		width: 89vw;
+	}
+	h1 {
+		padding-top: 30vh;
+	}
+	.page {
+		padding: 0 9vw;
+	}
+	#homepage-part2-text-container {
+		flex-direction: row;
+	}
+	#video-credits {
+		margin-top: 2.7rem;
+	}
+	button {
+		margin: 1.5rem 0 2.5rem 0;
+	}
+	#more-about {
+		margin: 1rem 0 3rem 0;
+	}
+	#about {
+		display: grid;
+		grid-template-areas: 
+			"text-left text-right"
+			"button	   text-right";
+		grid-template-columns: calc(50% - 2.5rem) 50%;
+		grid-column-gap: 2.5rem;
+	}
+	.text-left {
+		grid-area: text-left;
+	}
+	.text-right {
+		grid-area: text-right;
+	}
+	.text-right-about {
+		margin: 5.4rem 0 2.5rem 0;
+	}
+	#music, #sound-design {
+		font-size: inherit;
+	}
+	.about.button.container {
+		grid-area: button;
+	}
+	#more-about {
+		position: relative;
+		top: -3rem;
+	}
+	#soundcloud {
+		padding-top: 4.5vh;
+	}
+	#iframe {
+		width: 70vw;
+		height: 80vh;
+	}
+	#break1, #break3 {
+		display: none;
+	}
+	#break2 {
+		display: block;
+	}	
+	#about-page-text p {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+}
